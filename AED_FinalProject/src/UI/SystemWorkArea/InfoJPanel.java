@@ -8,6 +8,7 @@ import Business.Business;
 import Business.Merchant.Merchant;
 import Business.ProductSchedule.Schedule;
 import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,37 +16,37 @@ import javax.swing.table.DefaultTableModel;
  * @author tianshiyun
  */
 public class InfoJPanel extends javax.swing.JPanel {
-        Business business;
-        UserAccount userAccount;
-        DefaultTableModel userTableModel;
+
+    Business business;
+    UserAccount userAccount;
+    DefaultTableModel userTableModel;
+
     /**
      * Creates new form InfoJPanel
      */
     public InfoJPanel() {
         initComponents();
     }
-    
+
     public InfoJPanel(Business business, UserAccount userAccount) {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
         this.userTableModel = (DefaultTableModel) userTable.getModel();
         display();
-        
+
     }
-    
-    public void display(){
+
+    public void display() {
         userTableModel.setRowCount(0);
-        
-        for(Merchant m: this.business.getMerchantDirectory().getMerchantList()){  
-            for(UserAccount u: this.business.getUserAccountDirectory().getUserAccounts()){
-                Object[] row = new Object[3];
-                row[0] = u.getUsername();
-                row[1] = u.getPassword();
-                row[2] = u.getRole();
-                userTableModel.addRow(row);
-            }
-        }                              
+
+        for (UserAccount u : this.business.getUserAccountDirectory().getUserAccounts()) {
+            Object[] row = new Object[3];
+            row[0] = u.getUsername();
+            row[1] = u.getPassword();
+            row[2] = u.getRole();
+            userTableModel.addRow(row);
+        }
     }
 
     /**
@@ -67,7 +68,6 @@ public class InfoJPanel extends javax.swing.JPanel {
         passwordTxt = new javax.swing.JTextField();
         updateButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        chooseButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -89,11 +89,24 @@ public class InfoJPanel extends javax.swing.JPanel {
             new String [] {
                 "User Name", "Password", "Role"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         userTable.setMaximumSize(new java.awt.Dimension(1200, 1000));
         userTable.setMinimumSize(new java.awt.Dimension(1200, 1000));
         userTable.setPreferredSize(new java.awt.Dimension(1200, 1000));
         userTable.setSize(new java.awt.Dimension(1200, 1000));
+        userTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(userTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 183, 498, 223));
@@ -108,12 +121,12 @@ public class InfoJPanel extends javax.swing.JPanel {
         add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 85, 240, 30));
 
         jLabel1.setText("Username");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 566, -1, -1));
-        add(usernameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 555, 266, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
+        add(usernameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 266, 40));
 
         jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 643, -1, -1));
-        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 632, 266, 40));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, -1, -1));
+        add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 266, 40));
 
         updateButton.setText("Update");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,18 +134,10 @@ public class InfoJPanel extends javax.swing.JPanel {
                 updateButtonActionPerformed(evt);
             }
         });
-        add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 733, 384, 41));
+        add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 620, 384, 41));
 
         jLabel3.setText("Username");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 88, -1, -1));
-
-        chooseButton.setText("Choose Button");
-        chooseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chooseButtonActionPerformed(evt);
-            }
-        });
-        add(chooseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 433, 294, 35));
 
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +145,7 @@ public class InfoJPanel extends javax.swing.JPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 809, 384, 40));
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, 384, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -50, -1, -1));
@@ -149,8 +154,8 @@ public class InfoJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         userTableModel.setRowCount(0);
         String name = nameTxt.getText();
-        for(UserAccount u: this.business.getUserAccountDirectory().getUserAccounts()){
-            if(u.getUsername().equals(name)){
+        for (UserAccount u : this.business.getUserAccountDirectory().getUserAccounts()) {
+            if (u.getUsername().equals(name)) {
                 Object[] row = new Object[3];
                 row[0] = u.getUsername();
                 row[1] = u.getPassword();
@@ -161,45 +166,48 @@ public class InfoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void chooseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseButtonActionPerformed
-        int selectedRow = userTable.getSelectedRow();
-        if (selectedRow >= 0){
-            UserAccount user = (UserAccount)userTable.getValueAt(selectedRow, 0);
-            nameTxt.setText(user.getUsername());
-            passwordTxt.setText(user.getPassword());
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chooseButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         int selectedRow = userTable.getSelectedRow();
-        if (selectedRow >= 0){
-            UserAccount user = (UserAccount)userTable.getValueAt(selectedRow, 0);
-                usernameTxt.setText(user.getUsername());
-                passwordTxt.setText(user.getPassword());
-             String name = usernameTxt.getText();
-             String password = passwordTxt.getText();
-             user.setUsername(name);
-             user.setPassword(password);
-             return;
+        if (selectedRow >= 0) {
+            String username = String.valueOf(userTable.getValueAt(selectedRow, 0));
+            UserAccount user = this.business.getUserAccountDirectory().findByName(username);
+//            usernameTxt.setText(user.getUsername());
+//            passwordTxt.setText(user.getPassword());
+//            String name = usernameTxt.getText();
+//            String password = passwordTxt.getText();
+            user.setUsername(usernameTxt.getText());
+            user.setPassword(passwordTxt.getText());
+            JOptionPane.showMessageDialog(null, "Updated successfully！");
+//             return;
         }
-        
-        
-// TODO add your handling code here:
+        display();
+
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         int selectedRow = userTable.getSelectedRow();
-        if (selectedRow >= 0){
-            UserAccount user = (UserAccount)userTable.getValueAt(selectedRow, 0);
-            this.business.getUserAccountDirectory().getUserAccounts().remove(user);
+        if (selectedRow >= 0) {
+            String username = String.valueOf(userTable.getValueAt(selectedRow, 0));
+            this.business.getUserAccountDirectory().removeUserAccount(username);
+            JOptionPane.showMessageDialog(null, "Deleted successfully！");
+            display();
         }
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void userTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTableMouseClicked
+        // TODO add your handling code here:
+        int selectedRow = userTable.getSelectedRow();
+        DefaultTableModel userTableModel = (DefaultTableModel) userTable.getModel();
+        String username = String.valueOf(userTable.getValueAt(selectedRow, 0));
+        String password = String.valueOf(userTable.getValueAt(selectedRow, 1));
+        usernameTxt.setText(username);
+        passwordTxt.setText(password);
+    }//GEN-LAST:event_userTableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton chooseButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

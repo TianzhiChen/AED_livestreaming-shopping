@@ -16,27 +16,30 @@ import javax.swing.JOptionPane;
  * @author tianshiyun
  */
 public class EditJPanel extends javax.swing.JPanel {
+
     Business business;
     UserAccount userAccount;
+
     /**
      * Creates new form EditJPanel
      */
     public EditJPanel() {
         initComponents();
     }
-    public EditJPanel(Business business,UserAccount userAccount) {
+
+    public EditJPanel(Business business, UserAccount userAccount) {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
         userName.setText(this.userAccount.getUsername());
         password.setText(this.userAccount.getPassword());
-        for(Customer c: this.business.getCustomerDirectory().getCustomerDirectory()){
-            if(c.getName().equals(userAccount.getUsername())){
+        for (Customer c : this.business.getCustomerDirectory().getCustomerDirectory()) {
+            if (c.getName().equals(userAccount.getUsername())) {
                 fieldEmail.setText(c.getEmail());
-                fieldPhone.setText(c.getPhoneNumber()+"");
-                }    
+                fieldPhone.setText(c.getPhoneNumber() + "");
+            }
         }
-        
+
     }
 
     /**
@@ -116,31 +119,31 @@ public class EditJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_userNameActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-    String name = userName.getText();
-    String passwo = password.getText();
-    String email = fieldEmail.getText();
-    Long phone = Long.valueOf(fieldPhone.getText());
-    Pattern p = Pattern.compile("\\d{10}");
+        String name = userName.getText();
+        String passwo = password.getText();
+        String email = fieldEmail.getText();
+        Long phone = Long.valueOf(fieldPhone.getText());
+        Pattern p = Pattern.compile("\\d{10}");
         Pattern emailP = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Matcher m1 = p.matcher(fieldPhone.getText());
         Matcher m2 = emailP.matcher(fieldEmail.getText());
         boolean b = m1.matches();
         boolean b2 = m2.matches();
-    if(name.isEmpty() || passwo.isEmpty() || !b || !b2 || fieldPhone.getText().length() !=10|| email.isEmpty() || phone.toString().isEmpty()){
-        JOptionPane.showMessageDialog(null, "Please fill all field in correct form!");
-    }else{
-        for(Customer c: this.business.getCustomerDirectory().getCustomerDirectory()){
-            if(c.getName().equals(userAccount.getUsername())){
-        c.setEmail(email);
-        c.setName(name);
-        c.setPassword(passwo);
-        c.setPhoneNumber(phone);
-        this.userAccount.setPassword(passwo);
-        }else{
-                JOptionPane.showMessageDialog(null, "Name exists!");
-        }
-    }
-    
+        if (name.isEmpty() || passwo.isEmpty() || !b || !b2 || fieldPhone.getText().length() != 10 || email.isEmpty() || phone.toString().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill all field in correct form!");
+        } else {
+            for (Customer c : this.business.getCustomerDirectory().getCustomerDirectory()) {
+                if (c.getName().equals(userAccount.getUsername())) {
+                    c.setEmail(email);
+                    c.setName(name);
+                    c.setPassword(passwo);
+                    c.setPhoneNumber(phone);
+                    this.userAccount.setPassword(passwo);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Name exists!");
+                }
+            }
+
 // TODO add your handling code here:
     }//GEN-LAST:event_updateButtonActionPerformed
     }

@@ -212,14 +212,12 @@ public class ProductManagementJPanel extends javax.swing.JPanel {
         } else {
             if (this.business.getMerchantDirectory().findMerchantByName(this.userAccount.getUsername()) != null) {
                 Merchant m = this.business.getMerchantDirectory().findMerchantByName(this.userAccount.getUsername());
-
                 if (m.getProductCatalog().productExists(productName)) {
 
                     JOptionPane.showMessageDialog(null, "Sorry credentials are taken.");
                 } else {
                     Product createdProduct = m.getProductCatalog().createProduct(productName, category, price, description, image);
                     if (createdProduct != null) {
-
                         JOptionPane.showMessageDialog(null, "Product created");
                         populate();
                     } else {

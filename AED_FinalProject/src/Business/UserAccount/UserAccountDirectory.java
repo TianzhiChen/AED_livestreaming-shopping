@@ -40,6 +40,24 @@ public class UserAccountDirectory {
         return null;
     }
 
+    public UserAccount findByName(String name) {
+        for (UserAccount u : this.userAccounts) {
+            if (u.getUsername().equals(name)) {
+                return u;
+            }
+        }
+        return null;
+    }
+    
+    public void removeUserAccount(String name) {
+        for (UserAccount ua: this.userAccounts) {
+            if (ua.getUsername().equals(name)) {
+                this.userAccounts.remove(ua);
+                break;
+            }
+        }
+    }
+
     public UserAccount getUserAccount(String username, String password, String role) {
         for (UserAccount u : this.userAccounts) {
             if (u.getUsername().equals(username) && u.getPassword().equals(password) && u.getRole().equals(role)) {
@@ -52,7 +70,7 @@ public class UserAccountDirectory {
     public Boolean accountExists(String name, String role) {
 
         for (UserAccount u : this.userAccounts) {
-            
+
             if (u.getUsername().equals(name) && u.getRole().equals(role)) {
                 return true;
             }
@@ -60,7 +78,7 @@ public class UserAccountDirectory {
         return false;
     }//注册时同一身份姓名不重复，学生和老师姓名重复没关系，登陆需要选身份
 
-    public Boolean accountLogExists(String userName, String password, String role) {   
+    public Boolean accountLogExists(String userName, String password, String role) {
         for (UserAccount u : this.userAccounts) {
             if (u.getUsername().equals(userName) && u.getPassword().equals(password) && u.getRole().equals(role)) {
                 return true;
