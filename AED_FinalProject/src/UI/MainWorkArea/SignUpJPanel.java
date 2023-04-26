@@ -174,6 +174,8 @@ public class SignUpJPanel extends javax.swing.JPanel {
                 UserAccount user = this.business.getUserAccountDirectory().createUserAccount(name, pass, role);
                 if (role.equals("Customer")){
                     Customer c = user.creatCustomer();
+                    c.setEmail(fieldPhone.getText());
+                    c.setPhoneNumber(Long.valueOf(fieldPhone.getText()));
                     this.business.getCustomerDirectory().getCustomerDirectory().add(c);
                 } else if (role.equals("Merchant")) {
                     this.business.getMerchantDirectory().createMerchant(name);
