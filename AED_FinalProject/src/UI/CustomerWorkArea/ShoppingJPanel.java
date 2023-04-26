@@ -66,10 +66,9 @@ public class ShoppingJPanel extends javax.swing.JPanel {
                     Object[] row = new Object[4];
                     row[0] = m.getMerchantName();
                     row[1] =s.getName();
-
     //                row[1] = s.getStatus();     
                     row[2] = s.getStatus();     
-                    row[3] = "very popular";
+                    row[3] = s.getAdvertisement().getPopularity();
                             //s.getAdvertisement().getPopularity();
                     System.out.println(m.getName());
                     watchTableModel.addRow(row);
@@ -129,7 +128,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {

@@ -27,45 +27,38 @@ public class InspectorJFrame extends javax.swing.JFrame {
     /**
      * Creates new form InspectorJFrame
      */
-    
     Business business;
     UserAccount userAccount;
     DefaultTableModel tableModel;
+
     public InspectorJFrame() {
         initComponents();
     }
-    
-    public InspectorJFrame(Business business, UserAccount userAccount ) {
+
+    public InspectorJFrame(Business business, UserAccount userAccount) {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
         this.tableModel = (DefaultTableModel) jTable1.getModel();
         populate();
     }
-    
-    public void populate(){
-              tableModel.setRowCount(0);
+
+    public void populate() {
+        tableModel.setRowCount(0);
         for (Merchant m : this.business.getMerchantDirectory().getMerchantList()) {
-            for(Schedule s : m.getScheduleDirectory().getScheduleList()){
-            
-            Map<String, ProductOffer> productMap = s.getProductMap();
-           for(String pname: productMap.keySet()){
-               ProductOffer po = productMap.get(pname);
-                Product p = po.getProduct();
-                Object[] row = new Object[6];
+            for (Product p : m.getProductCatalog().getProductList()) {
+
+                Object[] row = new Object[5];
                 row[0] = m.getMerchantName();
-                row[1] = p.getProductId();
+                row[1] = p.getProductName();
                 row[2] = p.getCategory();
                 row[3] = p.getProductPrice();
-                row[4] = p.getDescription();
-                row[5] = p.getStatus();
+                row[4] = p.getStatus();
                 tableModel.addRow(row);
-           }
-            
             }
 
         }
-    
+
     }
 
     /**
@@ -90,17 +83,17 @@ public class InspectorJFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Merchant", "Product", "Category", "Price", "Description", "Status"
+                "Merchant", "Product", "Category", "Price", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -154,82 +147,81 @@ public class InspectorJFrame extends javax.swing.JFrame {
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         // TODO add your handling code here:
-        
-         int selectedRow = jTable1.getSelectedRow();
-        
-        if(selectedRow >=0){
-            
-            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
+
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow >= 0) {
+
+            String mid = String.valueOf(jTable1.getValueAt(selectedRow, 0));
             String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
-            
+
             Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
-            
-            Product p = m.getProductCatalog().findProductByid(pid);
-            
-         
-              ImageIcon ii = new ImageIcon(p.getProductImage());
+
+            Product p = m.getProductCatalog().findProductByName(pid);
+
+            ImageIcon ii = new ImageIcon(p.getProductImage());
             // resize image to fit jlabel
             Image image = ii.getImage().getScaledInstance(productImage.getWidth(), productImage.getHeight(), Image.SCALE_SMOOTH);
             productImage.setIcon(new ImageIcon(image));
-                
-        }else{
-        
+
+        } else {
+
             JOptionPane.showMessageDialog(null, "Please select a row!");
-                    
+
         }
     }//GEN-LAST:event_viewBtnActionPerformed
 
     private void rejectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectBtnActionPerformed
         // TODO add your handling code here:
-             int selectedRow = jTable1.getSelectedRow();
-        
-        if(selectedRow >=0){
-            
-            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow >= 0) {
+
+            String mid = String.valueOf(jTable1.getValueAt(selectedRow, 0));
             String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
-            
+
             Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
-            
-            Product p = m.getProductCatalog().findProductByid(pid);
-            
+
+            Product p = m.getProductCatalog().findProductByName(pid);
+
             p.setStatus(Status.REJECTED);
-            
+
             this.populate();
-                
-        }else{
-        
+
+        } else {
+
             JOptionPane.showMessageDialog(null, "Please select a row!");
-                    
+
         }
     }//GEN-LAST:event_rejectBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void approveBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtn1ActionPerformed
         // TODO add your handling code here:
-         // TODO add your handling code here:
-             int selectedRow = jTable1.getSelectedRow();
-        
-        if(selectedRow >=0){
-            
-            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow >= 0) {
+
+            String mid = String.valueOf(jTable1.getValueAt(selectedRow, 0));
             String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
-            
+
             Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
-            
-            Product p = m.getProductCatalog().findProductByid(pid);
-            
+
+            Product p = m.getProductCatalog().findProductByName(pid);
+
             p.setStatus(Status.APPROVED);
-            
+
             this.populate();
-                
-        }else{
-        
+
+        } else {
+
             JOptionPane.showMessageDialog(null, "Please select a row!");
-                    
+
         }
     }//GEN-LAST:event_approveBtn1ActionPerformed
 
