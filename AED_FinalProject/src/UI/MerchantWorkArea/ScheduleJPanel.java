@@ -184,17 +184,17 @@ public class ScheduleJPanel extends javax.swing.JPanel {
 
         liveScheTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Price", "Schedule", "Date", "Stock", "Sale Num"
+                "Name", "Price", "Schedule", "Date", "Stock"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -388,13 +388,13 @@ public class ScheduleJPanel extends javax.swing.JPanel {
                 SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
                 String dateString = formatter.format(s.getDate());
 
-                Object row[] = new Object[6];
+                Object row[] = new Object[5];
                 row[0] = po;
                 row[1] = po.getProduct().getProductPrice();
                 row[2] = s;
                 row[3] = dateString;
                 row[4] = po.getStock();
-                row[5] = po.getSaleNum();
+//                row[5] = po.getSaleNum();
                 liveScheTableModel.addRow(row);
             }
             

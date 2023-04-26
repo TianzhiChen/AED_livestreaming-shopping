@@ -7,7 +7,9 @@ package UI.DeliveryAgentWorkArea;
 import Business.Business;
 import Business.Customer.Customer;
 import Business.Customer.Order;
+import Business.Delivery.DeliveryAgent;
 import Business.UserAccount.UserAccount;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,9 +34,9 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
         this.business = business;
         this.userAccount = userAccount;
 
-
         this.deliveryTableModel = (DefaultTableModel) deliveryTable.getModel();
         populateDelivey();
+        populateDp();
     }
 
     /**
@@ -50,18 +52,21 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
         deliveryTable = new javax.swing.JTable();
         sentBtn = new javax.swing.JButton();
         deliveredBtn = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        assignBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         deliveryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Order", "Customer", "Merchant", "Status"
+                "Order", "Customer", "Merchant", "Status", "Delivery"
             }
         ));
         jScrollPane1.setViewportView(deliveryTable);
@@ -74,7 +79,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 sentBtnActionPerformed(evt);
             }
         });
-        add(sentBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 110, 30));
+        add(sentBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 110, 30));
 
         deliveredBtn.setText("DELIVERED");
         deliveredBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +87,25 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 deliveredBtnActionPerformed(evt);
             }
         });
-        add(deliveredBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 110, 30));
+        add(deliveredBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 110, 30));
+
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 170, 30));
+
+        assignBtn.setText("ASSIGN");
+        assignBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignBtnActionPerformed(evt);
+            }
+        });
+        add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 80, 30));
+
+        updateBtn.setText("UPDATE");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, 80, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void deliveredBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveredBtnActionPerformed
@@ -105,7 +128,51 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
         populateDelivey();
     }//GEN-LAST:event_sentBtnActionPerformed
 
-     public void populateDelivey() {
+    private void assignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = deliveryTable.getSelectedRow();
+        if (selectedRow >= 0) {
+            String agentName = (String) jComboBox1.getSelectedItem();
+            DeliveryAgent agent = this.business.getDeliveryAgentDirectory().findbyname(agentName);
+
+            Order o = (Order) deliveryTable.getValueAt(selectedRow, 0);
+            String orderID = o.getId();
+            Customer c = this.business.getCustomerDirectory().findCustomerByName(o.getCustomer().getName());
+            c.findOrderByID(orderID).setAgent(agent);
+
+            agent.addDeliveryOrder(o);
+            c.findOrderByID(orderID).setStatus(Order.Status.READY);
+            JOptionPane.showMessageDialog(null, "Assign successfully！");
+            this.populateDelivey();
+        } else {
+            JOptionPane.showMessageDialog(null, "Assign failed！");
+        }
+    }//GEN-LAST:event_assignBtnActionPerformed
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = deliveryTable.getSelectedRow();
+
+        if (selectedRow >= 0) {
+            String agentName = (String) jComboBox1.getSelectedItem();
+            DeliveryAgent agent = this.business.getDeliveryAgentDirectory().findbyname(agentName);
+
+            Order o = (Order) deliveryTable.getValueAt(selectedRow, 0);
+            String orderID = o.getId();
+            Customer c = this.business.getCustomerDirectory().findCustomerByName(o.getCustomer().getName());
+            c.findOrderByID(orderID).setAgent(agent);
+
+            agent.addDeliveryOrder(o);
+            c.findOrderByID(orderID).setStatus(Order.Status.READY);
+            JOptionPane.showMessageDialog(null, "Updated successfully！");
+            this.populateDelivey();
+        } else {
+            JOptionPane.showMessageDialog(null, "Updated failed！");
+        }
+        populateDelivey();
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    public void populateDelivey() {
         deliveryTableModel.setRowCount(0);
 //        for (Order o : this.business.getAllOrders().getOrderList()) {
 //            System.out.println(this.business.getAllOrders().getOrderList().size());
@@ -119,23 +186,35 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
 //
 //            deliveryTableModel.addRow(row);
 //        }
-        for(Customer c : this.business.getCustomerDirectory().getCustomerDirectory()){
-                for (Order o : c.getOrderList()) {
-                     Object[] row = new Object[4];
-                    row[0] = o;
-                    row[1] = o.getCustomer().getName();
-                    row[2] = o.getMerchant().getMerchantName();
-                    row[3] = o.getStatus();
-                    deliveryTableModel.addRow(row);
-             }
+        for (Customer c : this.business.getCustomerDirectory().getCustomerDirectory()) {
+            for (Order o : c.getOrderList()) {
+                Object[] row = new Object[5];
+                row[0] = o;
+                row[1] = o.getCustomer().getName();
+                row[2] = o.getMerchant().getMerchantName();
+                row[3] = o.getStatus();
+                row[4] = o.getAgent();
+
+                deliveryTableModel.addRow(row);
+            }
         }
-        
+
+    }
+
+    public void populateDp() {
+        jComboBox1.removeAllItems();
+        for (DeliveryAgent d : this.business.getDeliveryAgentDirectory().getAgents()) {
+            jComboBox1.addItem(d.getName());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton assignBtn;
     private javax.swing.JButton deliveredBtn;
     private javax.swing.JTable deliveryTable;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton sentBtn;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }

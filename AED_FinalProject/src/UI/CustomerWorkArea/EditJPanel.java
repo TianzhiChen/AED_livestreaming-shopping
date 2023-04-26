@@ -127,8 +127,8 @@ public class EditJPanel extends javax.swing.JPanel {
     String passwo = password.getText();
     String email = fieldEmail.getText();
     Long phone = Long.valueOf(fieldPhone.getText());
-    Pattern p = Pattern.compile("^[1-9]+[0-9]*$");
-        Pattern emailP = Pattern.compile("^.+@[^\\.].*\\.[a-z]{2,}$");
+    Pattern p = Pattern.compile("\\d{10}");
+        Pattern emailP = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Matcher m1 = p.matcher(fieldPhone.getText());
         Matcher m2 = emailP.matcher(fieldEmail.getText());
         boolean b = m1.matches();

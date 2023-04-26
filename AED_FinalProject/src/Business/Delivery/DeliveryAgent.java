@@ -28,11 +28,13 @@ public class DeliveryAgent {
     public DeliveryAgent(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
+        this.agentOrderList = new ArrayList<Order>();
     }
 
     public DeliveryAgent(String id, String name) {
         this.id = id;
         this.name = name;
+        this.agentOrderList = new ArrayList<Order>();
     }
 
     public void addDeliveryOrder(Order o) {

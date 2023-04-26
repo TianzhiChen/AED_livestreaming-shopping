@@ -35,7 +35,15 @@ public class CustomerDirectory {
 
         return null;
     }
+public Customer findCustomerByName(String id) {
+        for (Customer c : this.customerDirectory) {
+            if (c.getName().equals(id)) {
+                return c;
+            }
+        }
 
+        return null;
+    }
     /**
      * @return the customerDirectory
      */

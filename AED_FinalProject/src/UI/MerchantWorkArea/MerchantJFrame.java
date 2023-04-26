@@ -42,7 +42,6 @@ public class MerchantJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         leftJPanel = new javax.swing.JPanel();
-        deliveryBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         dashboardBtn = new javax.swing.JButton();
@@ -68,14 +67,6 @@ public class MerchantJFrame extends javax.swing.JFrame {
         leftJPanel.setMaximumSize(new java.awt.Dimension(2147, 2147));
         leftJPanel.setPreferredSize(new java.awt.Dimension(400, 600));
         leftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        deliveryBtn.setText("Delivery Management");
-        deliveryBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deliveryBtnActionPerformed(evt);
-            }
-        });
-        leftJPanel.add(deliveryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit_property_24px.png"))); // NOI18N
         leftJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 40));
@@ -228,11 +219,6 @@ public class MerchantJFrame extends javax.swing.JFrame {
         jSplitPane1.setRightComponent(new AdManagementJPanel(this.business, this.userAccount));
     }//GEN-LAST:event_adInfoBtnActionPerformed
 
-    private void deliveryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryBtnActionPerformed
-        // TODO add your handling code here:
-        jSplitPane1.setRightComponent(new DeliveryManagementJPanel(this.business, this.userAccount));
-    }//GEN-LAST:event_deliveryBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -271,7 +257,6 @@ public class MerchantJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adInfoBtn;
     private javax.swing.JButton dashboardBtn;
-    private javax.swing.JButton deliveryBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

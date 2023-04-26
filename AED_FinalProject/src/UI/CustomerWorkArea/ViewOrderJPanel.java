@@ -116,21 +116,22 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
                     for (Order o : c.getOrderList()) {
                         if(o.getId().equals(orderN)){
                          o.setStatus(Order.Status.RECEIVED);
-                         orderTableModel.removeRow(selectedRow);
-                         
-                        Object[] row = new Object[3];
-                        row[0] = o.getId();
-                        System.out.println(o.getId());
-                        row[1] = o.getPrice();
-                        System.out.println(o.getPrice());
-                        row[2] = o.getStatus();
-                        orderTableModel.addRow(row);
-                        return;
-                        }return;
-                    }return;
+////                         orderTableModel.removeRow(selectedRow);
+//                         
+//                        Object[] row = new Object[3];
+//                        row[0] = o.getId();
+//                        System.out.println(o.getId());
+//                        row[1] = o.getPrice();
+//                        System.out.println(o.getPrice());
+//                        row[2] = o.getStatus();
+//                        orderTableModel.addRow(row);
+                        
+                        }
+                    }
                     
-                }return;
-            }return;
+                }
+            }
+            this.display();
 
         } else {
 

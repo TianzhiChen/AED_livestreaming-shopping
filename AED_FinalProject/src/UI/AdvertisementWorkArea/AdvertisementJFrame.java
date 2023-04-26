@@ -44,8 +44,6 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         logoutBtn = new javax.swing.JButton();
         adManageBtn = new javax.swing.JButton();
-        viewAdBtn = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,17 +65,6 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(adManageBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
-
-        viewAdBtn.setText("View Ad Perfomance");
-        viewAdBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAdBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(viewAdBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
@@ -114,11 +101,6 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         jSplitPane1.setRightComponent(new AdManagementJPanel(this.business, this.userAccount));
     }//GEN-LAST:event_adManageBtnActionPerformed
-
-    private void viewAdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAdBtnActionPerformed
-        // TODO add your handling code here:
-        jSplitPane1.setRightComponent(new ViewAdJPanel(this.business, this.userAccount));
-    }//GEN-LAST:event_viewAdBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
@@ -163,11 +145,9 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adManageBtn;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton logoutBtn;
-    private javax.swing.JButton viewAdBtn;
     // End of variables declaration//GEN-END:variables
 }
