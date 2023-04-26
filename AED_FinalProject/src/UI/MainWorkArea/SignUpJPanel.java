@@ -52,6 +52,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
+ 
     }
 
     /**

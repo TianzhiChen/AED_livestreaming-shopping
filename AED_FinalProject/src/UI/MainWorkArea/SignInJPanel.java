@@ -6,6 +6,7 @@ package UI.MainWorkArea;
 
 import Business.Business;
 import Business.UserAccount.UserAccount;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,6 +16,7 @@ import javax.swing.JOptionPane;
 public class SignInJPanel extends javax.swing.JPanel {
         Business business;
         UserAccount userAccount;
+        JFrame mainJ;
     /**
      * Creates new form SignInJPanel
      */
@@ -22,10 +24,11 @@ public class SignInJPanel extends javax.swing.JPanel {
         initComponents();
     }
     
-    public SignInJPanel(Business business, UserAccount userAccount ) {
+    public SignInJPanel(Business business, UserAccount userAccount , JFrame mainJ) {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
+        this.mainJ=mainJ;
     }
 
     /**
@@ -104,7 +107,7 @@ public class SignInJPanel extends javax.swing.JPanel {
         if(this.business.getUserAccountDirectory().accountLogExists(usern, passw, role)){
             UserAccount user1 = this.business.getUserAccountDirectory().getUserAccount(usern, passw, role);
             
-            this.setVisible(false);
+            mainJ.setVisible(false);
             user1.getWorkArea(role, this.business, user1).setVisible(true);
     
         }else{

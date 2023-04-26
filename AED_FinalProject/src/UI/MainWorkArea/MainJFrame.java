@@ -125,7 +125,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signinBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinBtnActionPerformed
-        jSplitPane1.setRightComponent(new SignInJPanel(this.business, this.userAccount));
+        jSplitPane1.setRightComponent(new SignInJPanel(this.business, this.userAccount,this));
      // TODO add your handling code here:
     }//GEN-LAST:event_signinBtnActionPerformed
 
