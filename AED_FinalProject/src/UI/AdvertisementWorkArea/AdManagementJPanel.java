@@ -140,24 +140,30 @@ public class AdManagementJPanel extends javax.swing.JPanel {
         String name = fieldName.getText();
         double price = Double.valueOf(fieldPrice.getText());
         int popularity = Integer.valueOf(fieldPopularity.getText());
+        if (name.isEmpty() || fieldPrice.getText().isEmpty() || fieldPopularity.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill all fields.");
+        } else {
+            this.business.getAdvertisementDirectory().createAd(name, price, popularity);
+            populate();
+        }
 
-        this.business.getAdvertisementDirectory().createAd(name, price, popularity);
-        populate();
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
         int selectedRow = adTable.getSelectedRow();
         if (selectedRow >= 0) {
-        Advertisement ad = (Advertisement) adTable.getValueAt(selectedRow, 0);
-            
+            Advertisement ad = (Advertisement) adTable.getValueAt(selectedRow, 0);
+
             ad.setAdName(fieldName.getText());
             ad.setAdPrice(Double.valueOf(fieldPrice.getText()));
             ad.setPopularity(Integer.valueOf(fieldPopularity.getText()));
-            this.business.getAdvertisementDirectory().updateAd(ad);
-            JOptionPane.showMessageDialog(null, "Updated successfully!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Invalid row");
+            if (fieldName.getText().isEmpty() || fieldPrice.getText().isEmpty() || fieldPopularity.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please fill all fields.");
+            } else {
+                this.business.getAdvertisementDirectory().updateAd(ad);
+                JOptionPane.showMessageDialog(null, "Updated successfully!");
+            }
         }
         populate();
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -167,12 +173,12 @@ public class AdManagementJPanel extends javax.swing.JPanel {
         int selectedRow = adTable.getSelectedRow();
         if (selectedRow >= 0) {
             Advertisement ad = (Advertisement) adTable.getValueAt(selectedRow, 0);
-      
+
             this.business.getAdvertisementDirectory().removeAd(ad.getAdName());
             JOptionPane.showMessageDialog(null, "Deleted successfully!");
             populate();
         } else {
-            
+
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
 

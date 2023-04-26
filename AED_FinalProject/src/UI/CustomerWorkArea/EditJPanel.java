@@ -135,12 +135,13 @@ public class EditJPanel extends javax.swing.JPanel {
             for (Customer c : this.business.getCustomerDirectory().getCustomerDirectory()) {
                 if (c.getName().equals(userAccount.getUsername())) {
                     c.setEmail(email);
-                    c.setName(name);
-                    c.setPassword(passwo);
+//                    c.setName(name);
+//                    c.setPassword(passwo);
                     c.setPhoneNumber(phone);
                     this.userAccount.setPassword(passwo);
+                    JOptionPane.showMessageDialog(null, "Updated successfully!!");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Name exists!");
+//                    JOptionPane.showMessageDialog(null, "Name exists!");
                 }
             }
 
