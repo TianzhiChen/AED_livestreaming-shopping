@@ -67,7 +67,7 @@ public class SystemJFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(60, 330, 151, 42);
+        jButton2.setBounds(60, 250, 151, 42);
 
         jButton3.setText("Create User");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +76,7 @@ public class SystemJFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(60, 240, 150, 40);
+        jButton3.setBounds(60, 340, 150, 40);
 
         jButton1.setText("LOG OUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

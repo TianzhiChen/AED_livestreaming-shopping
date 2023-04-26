@@ -42,6 +42,7 @@ public class Schedule {
       
         this.name = name;
         this.date = date;
+        this.status = Status.PENDING;
         this.productMap = new HashMap<String, ProductOffer>();
     }
 

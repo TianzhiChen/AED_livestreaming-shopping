@@ -35,6 +35,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
     DefaultTableModel viewTableModel;
     DefaultTableModel cartTableModel;
     Order order;
+    Merchant merchant;
     /**
      * Creates new form ShoppingJPanel
      */
@@ -49,7 +50,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         this.cartTableModel = (DefaultTableModel) cartTable.getModel();
         this.business = business;
         this.userAccount = userAccount;   
-        this.order = new Order();
+        this.order =new Order();
         order.setCustomer(userAccount.findCustomer());
         
         display();
@@ -61,16 +62,18 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         
         for(Merchant m: this.business.getMerchantDirectory().getMerchantList()){  
             for(Schedule s:m.getScheduleDirectory().getScheduleList()){
-                Object[] row = new Object[4];
-                row[0] = m.getMerchantName();
-                row[1] =s.getName();
-                
-//                row[1] = s.getStatus();     
-                row[2] = "aa";
-                row[3] = "bb";
-                        //s.getAdvertisement().getPopularity();
-                System.out.println(m.getName());
-                watchTableModel.addRow(row);
+               if(s.getStatus().equals(Schedule.Status.START)){
+                    Object[] row = new Object[4];
+                    row[0] = m.getMerchantName();
+                    row[1] =s.getName();
+
+    //                row[1] = s.getStatus();     
+                    row[2] = s.getStatus();     
+                    row[3] = "very popular";
+                            //s.getAdvertisement().getPopularity();
+                    System.out.println(m.getName());
+                    watchTableModel.addRow(row);
+               }
             }
         }                              
     }
@@ -254,6 +257,8 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         for(Customer c: this.business.getCustomerDirectory().getCustomerDirectory()){
             if(c.getName().equals(this.userAccount.getUsername())){
                 c.getOrderList().add(order);
+               this.order.setCustomer(c);
+               this.order.setMerchant(this.merchant);
                 Boolean b = c.getOrderList().isEmpty();
             System.out.println(b +"1");
             }
@@ -279,6 +284,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
                 row[1] = entry.getValue().getProduct().getProductPrice();
                 viewTableModel.addRow(row);
            }
+          this.merchant = this.business.getMerchantDirectory().findMerchantByName(m);
        
         }else {
 
@@ -298,7 +304,8 @@ public class ShoppingJPanel extends javax.swing.JPanel {
            String productOffer = (String)viewTable.getValueAt(selectedRow, 0);
            ProductOffer product = s.getProductOffer(productOffer);
            
-           String path = product.getProduct().getSelectedImagePath();
+           String path = product.getProduct().getProductImage();
+
             ImageIcon imageI = new ImageIcon(path);
             
             Image image = imageI.getImage().getScaledInstance(picture.getWidth(), picture.getHeight(), Image.SCALE_SMOOTH);

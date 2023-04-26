@@ -16,6 +16,8 @@ public class DeliveryAgent {
 
     String id;
     String name;
+    Double price;
+
     private ArrayList<Order> agentOrderList;
 
     public DeliveryAgent() {
@@ -61,6 +63,15 @@ public class DeliveryAgent {
         this.agentOrderList = agentOrderList;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
+    
     @Override
     public String toString() {
         return this.name;

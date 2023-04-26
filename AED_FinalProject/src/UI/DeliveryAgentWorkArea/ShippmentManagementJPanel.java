@@ -5,6 +5,7 @@
 package UI.DeliveryAgentWorkArea;
 
 import Business.Business;
+import Business.Customer.Customer;
 import Business.Customer.Order;
 import Business.UserAccount.UserAccount;
 import javax.swing.table.DefaultTableModel;
@@ -30,6 +31,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
+
 
         this.deliveryTableModel = (DefaultTableModel) deliveryTable.getModel();
         populateDelivey();
@@ -105,17 +107,29 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
 
      public void populateDelivey() {
         deliveryTableModel.setRowCount(0);
-        for (Order o : this.business.getAllOrders().getOrderList()) {
-
-            Object[] row = new Object[3];
-
-            row[0] = o;
-            row[1] = o.getCustomer().getName();
-            row[2] = o.getMerchant().getMerchantName();
-            row[3] = o.getStatus();
-
-            deliveryTableModel.addRow(row);
+//        for (Order o : this.business.getAllOrders().getOrderList()) {
+//            System.out.println(this.business.getAllOrders().getOrderList().size());
+//
+//            Object[] row = new Object[4];
+//
+//            row[0] = o;
+//            row[1] = o.getCustomer().getName();
+//            row[2] = o.getMerchant().getMerchantName();
+//            row[3] = o.getStatus();
+//
+//            deliveryTableModel.addRow(row);
+//        }
+        for(Customer c : this.business.getCustomerDirectory().getCustomerDirectory()){
+                for (Order o : c.getOrderList()) {
+                     Object[] row = new Object[4];
+                    row[0] = o;
+                    row[1] = o.getCustomer().getName();
+                    row[2] = o.getMerchant().getMerchantName();
+                    row[3] = o.getStatus();
+                    deliveryTableModel.addRow(row);
+             }
         }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

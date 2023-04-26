@@ -27,10 +27,14 @@ public class DeliveryJFrame extends javax.swing.JFrame {
      */
     public DeliveryJFrame() {
         initComponents();
+        this.setVisible(true);
     }
 
     public DeliveryJFrame(Business business, UserAccount userAccount) {
         initComponents();
+        this.setVisible(true);
+          this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+
         this.business = business;
         this.userAccount = userAccount;
 

@@ -5,8 +5,13 @@
 package Business.ProductCatalog;
 
 import Business.Merchant.Merchant;
+import Business.ProductSchedule.ProductOffer;
+import Business.ProductSchedule.Schedule;
+import Business.ProductSchedule.ScheduleDirectory;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -55,7 +60,6 @@ public class ProductCatalog {
         p.setProductPrice(price);
         p.setDescription(description);
         p.setProductImage(productImage);
-
         for (Product product : this.productList) {
             if (product.getProductName().equals(productName)) {
                 JOptionPane.showMessageDialog(null, "Product existed");

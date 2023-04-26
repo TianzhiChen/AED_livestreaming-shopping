@@ -39,8 +39,8 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         tableModel.setRowCount(0);
         for (DeliveryAgent a : this.business.getDeliveryAgentDirectory().getAgents()) {
             Object[] row = new Object[2];
-            row[0] = a.getId();
-            row[1] = a.getName();
+            row[0] = a.getName();
+            row[1] = a.getPrice();
             tableModel.addRow(row);
         }
     }
@@ -62,7 +62,7 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        PriceField = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -78,7 +78,7 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -130,7 +130,13 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Per Delivery Price");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 170, 30));
+
+        PriceField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PriceFieldActionPerformed(evt);
+            }
+        });
+        add(PriceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 170, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fieldAgentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldAgentNameActionPerformed
@@ -140,7 +146,8 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
     private void createAgentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAgentBtnActionPerformed
         // TODO add your handling code here:
 
-        this.business.getDeliveryAgentDirectory().createAgent(fieldAgentName.getText());
+        DeliveryAgent a =this.business.getDeliveryAgentDirectory().createAgent(fieldAgentName.getText());
+        a.setPrice(Double.valueOf(PriceField.getText()));
         populate();
     }//GEN-LAST:event_createAgentBtnActionPerformed
 
@@ -157,8 +164,10 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = agentTable.getSelectedRow();
         if (selectedRow >= 0) {
-            DeliveryAgent da = (DeliveryAgent) agentTable.getValueAt(selectedRow, 0);
+            String agentName = (String)agentTable.getValueAt(selectedRow, 0);
+            DeliveryAgent da =this.business.getDeliveryAgentDirectory().findbyname(agentName);
             da.setName(fieldAgentName.getText());
+            da.setPrice(Double.valueOf(PriceField.getText()));
             JOptionPane.showMessageDialog(null, "Updated successfully！");
         } else {
 
@@ -170,8 +179,8 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = agentTable.getSelectedRow();
         if (selectedRow >= 0) {
-            DeliveryAgent da = (DeliveryAgent) agentTable.getValueAt(selectedRow, 0);
-            this.business.getDeliveryAgentDirectory().removeAgent(da.getName());
+            String agentName = (String)agentTable.getValueAt(selectedRow, 0);
+            this.business.getDeliveryAgentDirectory().removeAgent(agentName);
             JOptionPane.showMessageDialog(null, "Deleted successfully！");
             populate();
         } else {
@@ -179,8 +188,13 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
 
+    private void PriceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PriceFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PriceFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField PriceField;
     private javax.swing.JTable agentTable;
     private javax.swing.JButton createAgentBtn;
     private javax.swing.JButton deleteBtn;
@@ -188,7 +202,6 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }

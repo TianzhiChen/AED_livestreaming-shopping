@@ -8,7 +8,13 @@ import Business.Business;
 import Business.Merchant.Merchant;
 import Business.ProductCatalog.Product;
 import Business.ProductCatalog.Product.Status;
+import Business.ProductSchedule.ProductOffer;
+import Business.ProductSchedule.Schedule;
 import Business.UserAccount.UserAccount;
+import UI.MainWorkArea.MainJFrame;
+import java.awt.Image;
+import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,40 +27,45 @@ public class InspectorJFrame extends javax.swing.JFrame {
     /**
      * Creates new form InspectorJFrame
      */
+    
     Business business;
     UserAccount userAccount;
     DefaultTableModel tableModel;
-    Product selectedProduct;
-    String imagePath;
-
     public InspectorJFrame() {
         initComponents();
     }
-
-    public InspectorJFrame(Business business, UserAccount userAccount) {
+    
+    public InspectorJFrame(Business business, UserAccount userAccount ) {
         initComponents();
         this.business = business;
         this.userAccount = userAccount;
         this.tableModel = (DefaultTableModel) jTable1.getModel();
         populate();
     }
-
-    public void populate() {
-        tableModel.setRowCount(0);
+    
+    public void populate(){
+              tableModel.setRowCount(0);
         for (Merchant m : this.business.getMerchantDirectory().getMerchantList()) {
-            for (Product p : m.getProductCatalog().getProductList()) {
-                Object[] row = new Object[7];
-                row[0] = m.getPersonId();
+            for(Schedule s : m.getScheduleDirectory().getScheduleList()){
+            
+            Map<String, ProductOffer> productMap = s.getProductMap();
+           for(String pname: productMap.keySet()){
+               ProductOffer po = productMap.get(pname);
+                Product p = po.getProduct();
+                Object[] row = new Object[6];
+                row[0] = m.getMerchantName();
                 row[1] = p.getProductId();
-                row[2] = p.getProductName();
-                row[3] = p.getCategory();
-                row[4] = p.getProductPrice();
-                row[5] = p.getDescription();
-                row[6] = p.getStatus();
+                row[2] = p.getCategory();
+                row[3] = p.getProductPrice();
+                row[4] = p.getDescription();
+                row[5] = p.getStatus();
                 tableModel.addRow(row);
+           }
+            
             }
-        }
 
+        }
+    
     }
 
     /**
@@ -69,26 +80,27 @@ public class InspectorJFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         rejectBtn = new javax.swing.JButton();
-        approveBtn = new javax.swing.JButton();
-        productImage = new javax.swing.JLabel();
         viewBtn = new javax.swing.JButton();
+        productImage = new javax.swing.JLabel();
+        approveBtn1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Product", "Category", "Price", "Merchant", "Status"
+                "Merchant", "Product", "Category", "Price", "Description", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -112,96 +124,120 @@ public class InspectorJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(rejectBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, -1, -1));
 
-        approveBtn.setText("Approve");
-        approveBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                approveBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(approveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, -1, -1));
-        getContentPane().add(productImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 310, 180));
-
-        viewBtn.setText("View Image");
+        viewBtn.setText("view");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+        getContentPane().add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, -1, -1));
+        getContentPane().add(productImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 310, 180));
+
+        approveBtn1.setText("Approve");
+        approveBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveBtn1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(approveBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, -1, -1));
+
+        jButton2.setText("LOG OUT");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtnActionPerformed
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         // TODO add your handling code here:
-
-        int selectedRow = jTable1.getSelectedRow();
-
-        if (selectedRow >= 0) {
-
-            String mname = String.valueOf(jTable1.getValueAt(selectedRow, 0));
+        
+         int selectedRow = jTable1.getSelectedRow();
+        
+        if(selectedRow >=0){
+            
+            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
             String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
-
-            Merchant m = this.business.getMerchantDirectory().findMerchantByName(mname);
-
+            
+            Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
+            
             Product p = m.getProductCatalog().findProductByid(pid);
-
-            p.setStatus(Status.APPROVED);
-            this.populate();
-
-        } else {
-
+            
+         
+              ImageIcon ii = new ImageIcon(p.getProductImage());
+            // resize image to fit jlabel
+            Image image = ii.getImage().getScaledInstance(productImage.getWidth(), productImage.getHeight(), Image.SCALE_SMOOTH);
+            productImage.setIcon(new ImageIcon(image));
+                
+        }else{
+        
             JOptionPane.showMessageDialog(null, "Please select a row!");
-
+                    
         }
-    }//GEN-LAST:event_approveBtnActionPerformed
+    }//GEN-LAST:event_viewBtnActionPerformed
 
     private void rejectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
-
-        if (selectedRow >= 0) {
-
-            String mid = String.valueOf(jTable1.getValueAt(selectedRow, 0));
+             int selectedRow = jTable1.getSelectedRow();
+        
+        if(selectedRow >=0){
+            
+            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
             String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
-
-            Merchant m = this.business.getMerchantDirectory().findById(mid);
-
+            
+            Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
+            
             Product p = m.getProductCatalog().findProductByid(pid);
-
+            
             p.setStatus(Status.REJECTED);
-
+            
             this.populate();
-
-        } else {
-
+                
+        }else{
+        
             JOptionPane.showMessageDialog(null, "Please select a row!");
-
+                    
         }
     }//GEN-LAST:event_rejectBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+    private void approveBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveBtn1ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow >= 0) {
-
-            // we can directly fetch the plan detail from the Zeroth position
-            this.selectedProduct = (Product) jTable1.getValueAt(selectedRow, 0);
-
-            // fill all the text feilds
-            productImage.setText(String.valueOf(this.imagePath));
-
-        } else {
-            // no selection by user
-            JOptionPane.showMessageDialog(null, "please select a row!");
+         // TODO add your handling code here:
+             int selectedRow = jTable1.getSelectedRow();
+        
+        if(selectedRow >=0){
+            
+            String mid =String.valueOf(jTable1.getValueAt(selectedRow, 0));
+            String pid = String.valueOf(jTable1.getValueAt(selectedRow, 1));
+            
+            Merchant m = this.business.getMerchantDirectory().findMerchantByName(mid);
+            
+            Product p = m.getProductCatalog().findProductByid(pid);
+            
+            p.setStatus(Status.APPROVED);
+            
+            this.populate();
+                
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "Please select a row!");
+                    
         }
+    }//GEN-LAST:event_approveBtn1ActionPerformed
 
-    }//GEN-LAST:event_viewBtnActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        new MainJFrame(this.business, this.userAccount).setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,7 +275,8 @@ public class InspectorJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton approveBtn;
+    private javax.swing.JButton approveBtn1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel productImage;

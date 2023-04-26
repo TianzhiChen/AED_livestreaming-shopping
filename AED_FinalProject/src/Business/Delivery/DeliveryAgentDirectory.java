@@ -41,6 +41,14 @@ public class DeliveryAgentDirectory {
         return da;
     }
 
+    public DeliveryAgent findbyname(String name){
+        for (DeliveryAgent d : this.agents)
+            if(d.getName().equals(name))
+                return d;
+        return null;
+    
+    }
+
     public void removeAgent(String name) {
         for (DeliveryAgent da : this.agents) {
             if (da.getName().equals(name)) {
