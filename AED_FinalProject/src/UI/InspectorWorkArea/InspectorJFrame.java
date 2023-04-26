@@ -77,8 +77,12 @@ public class InspectorJFrame extends javax.swing.JFrame {
         productImage = new javax.swing.JLabel();
         approveBtn1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,32 +111,35 @@ public class InspectorJFrame extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 798, 254));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 798, 254));
 
+        rejectBtn.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         rejectBtn.setText("Reject");
         rejectBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rejectBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(rejectBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 560, -1, -1));
+        getContentPane().add(rejectBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 553, 80, 30));
 
+        viewBtn.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         viewBtn.setText("view");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, -1, -1));
-        getContentPane().add(productImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 310, 180));
+        getContentPane().add(viewBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 80, 30));
+        getContentPane().add(productImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 310, 180));
 
+        approveBtn1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         approveBtn1.setText("Approve");
         approveBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approveBtn1ActionPerformed(evt);
             }
         });
-        getContentPane().add(approveBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, -1, -1));
+        getContentPane().add(approveBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 90, 30));
 
         jButton2.setText("LOG OUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +147,10 @@ public class InspectorJFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-pJ_DCj9KswI-unsplash.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-270, -440, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -269,6 +279,7 @@ public class InspectorJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approveBtn1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel productImage;

@@ -217,16 +217,20 @@ public class DashboardJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelPieChart.setLayout(new java.awt.BorderLayout());
-        add(panelPieChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 310, 300));
+        add(panelPieChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 310, 300));
 
         panelLineChart.setLayout(new java.awt.BorderLayout());
-        add(panelLineChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 320, 300));
+        add(panelLineChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 320, 300));
 
         panelBarChart.setLayout(new java.awt.BorderLayout());
-        add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 410, 300));
+        add(panelBarChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 350, 300));
 
         panelHistogram.setLayout(new java.awt.BorderLayout());
         add(panelHistogram, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 650, 270));

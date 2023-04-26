@@ -52,12 +52,21 @@ public class DeliveryJFrame extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         logoutBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         deliveryCompBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         shipBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setMinimumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 1300));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutBtn.setText("LOGOUT");
@@ -66,28 +75,51 @@ public class DeliveryJFrame extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, 130, 30));
 
-        deliveryCompBtn.setText("Delivery comany management");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/google_forms_24px.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel3.setText("Delivery Management");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 160, 20));
+
         deliveryCompBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deliveryCompBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(deliveryCompBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(deliveryCompBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 230, 40));
 
-        shipBtn.setText("Shippment Management");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add_user_group_woman_man_24px.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel1.setText("Shippment Management");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 180, 20));
+
         shipBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shipBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(shipBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        jPanel1.add(shipBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 230, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/annie-spratt-HB-Kf9WLy_0-unsplash.jpg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, -70, -1, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setSize(new java.awt.Dimension(1200, 1300));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-hR545CzxZxk-unsplash.jpg"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-610, -380, 6100, 4090));
+
         jSplitPane1.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,6 +189,12 @@ public class DeliveryJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deliveryCompBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;

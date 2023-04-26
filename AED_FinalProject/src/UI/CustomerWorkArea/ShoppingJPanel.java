@@ -107,11 +107,12 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         deleteButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         quantity = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(174, 151, 106));
-        setMaximumSize(new java.awt.Dimension(1000, 1000));
-        setMinimumSize(new java.awt.Dimension(1000, 1000));
-        setPreferredSize(new java.awt.Dimension(1000, 1000));
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         watchTable.setBackground(new java.awt.Color(252, 251, 250));
@@ -139,7 +140,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         watchTable.setPreferredSize(new java.awt.Dimension(2147483647, 80));
         jScrollPane1.setViewportView(watchTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 24, 301, 177));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 24, 350, 190));
 
         watchButton.setBackground(new java.awt.Color(51, 51, 51));
         watchButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,7 +151,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
                 watchButtonActionPerformed(evt);
             }
         });
-        add(watchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 57, 23));
+        add(watchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 57, 23));
 
         viewTable.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         viewTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -248,6 +249,9 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         jLabel5.setText("Quantity");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 40, -1, -1));
         add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, 131, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/rikonavt-K3x_AkLVTAo-unsplash.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -70, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
@@ -428,6 +432,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField itemDescription;
     private javax.swing.JTextField itemName;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

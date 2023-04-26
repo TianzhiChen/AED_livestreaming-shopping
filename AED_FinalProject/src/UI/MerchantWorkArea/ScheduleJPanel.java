@@ -201,6 +201,10 @@ public class ScheduleJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        liveScheTable.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        liveScheTable.setMinimumSize(new java.awt.Dimension(1200, 1300));
+        liveScheTable.setPreferredSize(new java.awt.Dimension(1200, 1300));
+        liveScheTable.setSize(new java.awt.Dimension(1200, 1300));
         jScrollPane3.setViewportView(liveScheTable);
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 410, 310));

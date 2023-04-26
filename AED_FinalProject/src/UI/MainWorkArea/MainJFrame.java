@@ -44,7 +44,9 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         signupBtn = new javax.swing.JButton();
         signinBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1500, 1300));
@@ -59,7 +61,9 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1500, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(1500, 200));
         jPanel1.setSize(new java.awt.Dimension(1500, 200));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        signupBtn.setBackground(new java.awt.Color(255, 204, 204));
         signupBtn.setFont(new java.awt.Font("Helvetica", 1, 13)); // NOI18N
         signupBtn.setText("Sign Up");
         signupBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 51), null, java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -68,7 +72,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 signupBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(signupBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1106, 49, 197, 53));
 
+        signinBtn.setBackground(new java.awt.Color(255, 204, 204));
         signinBtn.setFont(new java.awt.Font("Helvetica", 1, 13)); // NOI18N
         signinBtn.setText("SIgn In");
         signinBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 51), null, java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -77,27 +83,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 signinBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(signinBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 49, 171, 53));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(signinBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 873, Short.MAX_VALUE)
-                .addComponent(signupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(signinBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                    .addComponent(signupBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(98, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-NmwkK1iKPVc-unsplash.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, -50, -1, -1));
 
         jSplitPane1.setTopComponent(jPanel1);
 
@@ -105,21 +94,29 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(1500, 1100));
         jPanel2.setMinimumSize(new java.awt.Dimension(1500, 1100));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-NmwkK1iKPVc-unsplash.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1500, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 2425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(3, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 2321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel2);
 
         getContentPane().add(jSplitPane1);
-        jSplitPane1.setBounds(0, 0, 1500, 1305);
+        jSplitPane1.setBounds(0, 0, 2437, 2635);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,6 +168,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;

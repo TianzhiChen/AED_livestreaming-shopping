@@ -55,7 +55,12 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox();
         assignBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         deliveryTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,7 +84,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 sentBtnActionPerformed(evt);
             }
         });
-        add(sentBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 110, 30));
+        add(sentBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 110, 30));
 
         deliveredBtn.setText("DELIVERED");
         deliveredBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +92,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 deliveredBtnActionPerformed(evt);
             }
         });
-        add(deliveredBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 110, 30));
+        add(deliveredBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, 110, 30));
 
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 170, 30));
 
@@ -97,7 +102,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 assignBtnActionPerformed(evt);
             }
         });
-        add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 80, 30));
+        add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 110, 30));
 
         updateBtn.setText("UPDATE");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +110,10 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, 80, 30));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 110, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/kier-in-sight-Tuo1C7bvkv8-unsplash.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1410, -650, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void deliveredBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveredBtnActionPerformed
@@ -213,6 +221,7 @@ public class ShippmentManagementJPanel extends javax.swing.JPanel {
     private javax.swing.JButton deliveredBtn;
     private javax.swing.JTable deliveryTable;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton sentBtn;
     private javax.swing.JButton updateBtn;

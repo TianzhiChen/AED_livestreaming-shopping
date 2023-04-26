@@ -43,22 +43,25 @@ public class SystemJFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1500, 1000));
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLocation(new java.awt.Point(300, 1000));
-        jPanel1.setMaximumSize(new java.awt.Dimension(300, 1000));
-        jPanel1.setMinimumSize(new java.awt.Dimension(300, 1000));
-        jPanel1.setPreferredSize(new java.awt.Dimension(300, 1000));
+        jPanel1.setMaximumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setMinimumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 1300));
         jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setSize(new java.awt.Dimension(300, 1000));
-        jPanel1.setLayout(null);
+        jPanel1.setSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setText("Update Info");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,8 +69,7 @@ public class SystemJFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(60, 250, 151, 42);
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 151, 42));
 
         jButton3.setText("Create User");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +77,7 @@ public class SystemJFrame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(60, 340, 150, 40);
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 150, 40));
 
         jButton1.setText("LOG OUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -84,28 +85,28 @@ public class SystemJFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(80, 90, 110, 40);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 110, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/keila-hotzel-2VyyvZns3qQ-unsplash.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -90, 6110, 4160));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel2.setLocation(new java.awt.Point(1200, 1000));
-        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1000));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1000));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1200, 1000));
-        jPanel2.setSize(new java.awt.Dimension(1200, 1000));
-        jPanel2.setLayout(null);
+        jPanel2.setLocation(new java.awt.Point(1200, 1300));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-NmwkK1iKPVc-unsplash.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(0, 0, 1200, 1000);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/keila-hotzel-2VyyvZns3qQ-unsplash.jpg"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -550, -1, -1));
 
         jSplitPane1.setRightComponent(jPanel2);
 
         getContentPane().add(jSplitPane1);
-        jSplitPane1.setBounds(0, 0, 1505, 1000);
+        jSplitPane1.setBounds(0, 0, 1505, 1300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -165,7 +166,8 @@ public class SystemJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;

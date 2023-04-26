@@ -77,80 +77,89 @@ public class SignUpJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         searchBtn = new javax.swing.JButton();
         fieldAddress = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(231, 225, 211));
-        setLayout(null);
+        setMaximumSize(new java.awt.Dimension(1500, 1100));
+        setMinimumSize(new java.awt.Dimension(1500, 1100));
+        setSize(new java.awt.Dimension(1500, 1100));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Enter Password");
-        add(jLabel1);
-        jLabel1.setBounds(220, 150, 98, 33);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 110, 33));
 
-        password.setBackground(new java.awt.Color(204, 204, 204));
+        password.setBackground(new java.awt.Color(255, 204, 204));
         password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(password);
-        password.setBounds(340, 150, 202, 33);
+        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 202, 33));
 
-        jLabel2.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("User Name");
-        add(jLabel2);
-        jLabel2.setBounds(220, 100, 66, 33);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 110, 33));
 
-        userName.setBackground(new java.awt.Color(204, 204, 204));
+        userName.setBackground(new java.awt.Color(255, 204, 204));
         userName.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(userName);
-        userName.setBounds(340, 100, 202, 33);
+        add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 202, 33));
 
-        signupBtn.setBackground(new java.awt.Color(51, 51, 51));
-        signupBtn.setForeground(new java.awt.Color(204, 204, 204));
+        signupBtn.setBackground(new java.awt.Color(226, 129, 177));
+        signupBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        signupBtn.setForeground(new java.awt.Color(255, 255, 255));
         signupBtn.setText("SIGN UP");
         signupBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signupBtnActionPerformed(evt);
             }
         });
-        add(signupBtn);
-        signupBtn.setBounds(220, 470, 318, 35);
+        add(signupBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 318, 35));
 
-        roleBox.setBackground(new java.awt.Color(204, 204, 204));
+        roleBox.setBackground(new java.awt.Color(255, 204, 204));
         roleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer", "Merchant" }));
-        add(roleBox);
-        roleBox.setBounds(340, 330, 202, 30);
+        add(roleBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 202, 30));
 
-        jLabel3.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Select Role");
-        add(jLabel3);
-        jLabel3.setBounds(220, 320, 98, 33);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 98, 33));
 
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Email");
-        add(jLabel4);
-        jLabel4.setBounds(220, 210, 32, 17);
-        add(fieldEmail);
-        fieldEmail.setBounds(340, 210, 200, 30);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 60, -1));
 
+        fieldEmail.setBackground(new java.awt.Color(255, 204, 204));
+        add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 200, 30));
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Phone");
-        add(jLabel5);
-        jLabel5.setBounds(220, 270, 36, 17);
-        add(fieldPhone);
-        fieldPhone.setBounds(340, 270, 200, 30);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
 
+        fieldPhone.setBackground(new java.awt.Color(255, 204, 204));
+        add(fieldPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 200, 30));
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Address");
-        add(jLabel6);
-        jLabel6.setBounds(230, 390, 49, 17);
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 388, 70, 20));
 
+        searchBtn.setBackground(new java.awt.Color(246, 183, 183));
+        searchBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(102, 102, 102));
         searchBtn.setText("SEARCH");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchBtnActionPerformed(evt);
             }
         });
-        add(searchBtn);
-        searchBtn.setBounds(570, 380, 90, 30);
-        add(fieldAddress);
-        fieldAddress.setBounds(340, 380, 200, 30);
+        add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 90, 30));
+
+        fieldAddress.setBackground(new java.awt.Color(255, 204, 204));
+        add(fieldAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 200, 30));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-hR545CzxZxk-unsplash.jpg"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1120, -360, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupBtnActionPerformed
@@ -303,6 +312,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField password;
     private javax.swing.JComboBox<String> roleBox;
     private javax.swing.JButton searchBtn;

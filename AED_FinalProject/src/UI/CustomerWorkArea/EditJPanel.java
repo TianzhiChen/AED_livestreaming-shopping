@@ -34,9 +34,7 @@ public class EditJPanel extends javax.swing.JPanel {
             if(c.getName().equals(userAccount.getUsername())){
                 fieldEmail.setText(c.getEmail());
                 fieldPhone.setText(c.getPhoneNumber()+"");
-                }
-        
-            
+                }    
         }
         
     }
@@ -61,24 +59,24 @@ public class EditJPanel extends javax.swing.JPanel {
         updateButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setLayout(null);
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Enter Password");
-        add(jLabel1);
-        jLabel1.setBounds(163, 217, 98, 33);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 217, 100, 33));
 
         password.setBackground(new java.awt.Color(204, 204, 204));
         password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(password);
-        password.setBounds(283, 217, 202, 33);
+        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 217, 202, 33));
 
-        jLabel2.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("User Name");
-        add(jLabel2);
-        jLabel2.setBounds(163, 167, 66, 33);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 120, 33));
 
         userName.setEditable(false);
         userName.setBackground(new java.awt.Color(204, 204, 204));
@@ -88,20 +86,17 @@ public class EditJPanel extends javax.swing.JPanel {
                 userNameActionPerformed(evt);
             }
         });
-        add(userName);
-        userName.setBounds(283, 167, 202, 33);
+        add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 167, 202, 33));
 
+        jLabel4.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel4.setText("Email");
-        add(jLabel4);
-        jLabel4.setBounds(163, 277, 32, 17);
-        add(fieldEmail);
-        fieldEmail.setBounds(283, 277, 200, 30);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 277, 60, -1));
+        add(fieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 277, 200, 30));
 
+        jLabel5.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel5.setText("Phone");
-        add(jLabel5);
-        jLabel5.setBounds(163, 337, 36, 17);
-        add(fieldPhone);
-        fieldPhone.setBounds(283, 337, 200, 30);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 337, -1, -1));
+        add(fieldPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 337, 200, 30));
 
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -109,13 +104,10 @@ public class EditJPanel extends javax.swing.JPanel {
                 updateButtonActionPerformed(evt);
             }
         });
-        add(updateButton);
-        updateButton.setBounds(164, 406, 320, 39);
+        add(updateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 406, 320, 39));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/annie-spratt-HB-Kf9WLy_0-unsplash.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        add(jLabel3);
-        jLabel3.setBounds(0, 0, 650, 540);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-QY5U8JD3-tk-unsplash.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed

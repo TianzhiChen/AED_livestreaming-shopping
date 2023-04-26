@@ -45,7 +45,9 @@ public class CustomerJFrame extends javax.swing.JFrame {
         viewButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1200, 1200));
@@ -53,9 +55,10 @@ public class CustomerJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LeftJPanel.setBackground(new java.awt.Color(156, 147, 127));
-        LeftJPanel.setMaximumSize(new java.awt.Dimension(200, 200));
-        LeftJPanel.setMinimumSize(new java.awt.Dimension(200, 200));
-        LeftJPanel.setPreferredSize(new java.awt.Dimension(200, 200));
+        LeftJPanel.setMaximumSize(new java.awt.Dimension(300, 1300));
+        LeftJPanel.setMinimumSize(new java.awt.Dimension(300, 1300));
+        LeftJPanel.setPreferredSize(new java.awt.Dimension(300, 1300));
+        LeftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         shoppingButton.setFont(new java.awt.Font("Impact", 1, 13)); // NOI18N
         shoppingButton.setText("Shopping");
@@ -65,6 +68,7 @@ public class CustomerJFrame extends javax.swing.JFrame {
                 shoppingButtonActionPerformed(evt);
             }
         });
+        LeftJPanel.add(shoppingButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 206, 120, 40));
 
         viewButton.setFont(new java.awt.Font("Impact", 1, 13)); // NOI18N
         viewButton.setText("View Order");
@@ -74,6 +78,7 @@ public class CustomerJFrame extends javax.swing.JFrame {
                 viewButtonActionPerformed(evt);
             }
         });
+        LeftJPanel.add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 323, 120, 40));
 
         jButton2.setText("LOG OUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +86,7 @@ public class CustomerJFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        LeftJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 79, 120, 37));
 
         editButton.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         editButton.setText("Edit Info");
@@ -89,53 +95,39 @@ public class CustomerJFrame extends javax.swing.JFrame {
                 editButtonActionPerformed(evt);
             }
         });
+        LeftJPanel.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 120, 35));
 
-        javax.swing.GroupLayout LeftJPanelLayout = new javax.swing.GroupLayout(LeftJPanel);
-        LeftJPanel.setLayout(LeftJPanelLayout);
-        LeftJPanelLayout.setHorizontalGroup(
-            LeftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftJPanelLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(LeftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeftJPanelLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(editButton))
-                    .addGroup(LeftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(shoppingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        LeftJPanelLayout.setVerticalGroup(
-            LeftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftJPanelLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
-                .addComponent(shoppingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
-                .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(554, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-pJ_DCj9KswI-unsplash.jpg"))); // NOI18N
+        LeftJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-15, -35, 3590, 3610));
 
         jSplitPane2.setLeftComponent(LeftJPanel);
 
         jPanel2.setBackground(new java.awt.Color(237, 234, 225));
-        jPanel2.setMaximumSize(new java.awt.Dimension(1000, 1000));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1000, 1000));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1000, 1000));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1200, 1300));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGap(0, 4500, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jSplitPane2.setRightComponent(jPanel2);
@@ -205,6 +197,8 @@ public class CustomerJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel LeftJPanel;
     private javax.swing.JButton editButton;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;

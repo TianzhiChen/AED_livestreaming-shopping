@@ -62,18 +62,22 @@ public class MerchantJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
 
         leftJPanel.setBackground(new java.awt.Color(153, 0, 255));
-        leftJPanel.setMaximumSize(new java.awt.Dimension(2147, 2147));
+        leftJPanel.setMaximumSize(new java.awt.Dimension(300, 1300));
+        leftJPanel.setMinimumSize(new java.awt.Dimension(300, 1300));
         leftJPanel.setPreferredSize(new java.awt.Dimension(400, 600));
         leftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit_property_24px.png"))); // NOI18N
-        leftJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 40));
+        leftJPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 70, 40));
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel11.setText("DASHBOARD");
-        leftJPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, -1));
+        leftJPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
 
         dashboardBtn.setBackground(new java.awt.Color(255, 153, 153));
         dashboardBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 17)); // NOI18N
@@ -82,7 +86,7 @@ public class MerchantJFrame extends javax.swing.JFrame {
                 dashboardBtnActionPerformed(evt);
             }
         });
-        leftJPanel.add(dashboardBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 330, 41));
+        leftJPanel.add(dashboardBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 300, 41));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sort_window_24px.png"))); // NOI18N
         leftJPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
@@ -98,7 +102,7 @@ public class MerchantJFrame extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        leftJPanel.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 330, 41));
+        leftJPanel.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 300, 41));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/categorize_24px.png"))); // NOI18N
         leftJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 30, -1));
@@ -114,7 +118,7 @@ public class MerchantJFrame extends javax.swing.JFrame {
                 proManaBtnActionPerformed(evt);
             }
         });
-        leftJPanel.add(proManaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 330, 41));
+        leftJPanel.add(proManaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 300, 41));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/shopping_cart_24px.png"))); // NOI18N
         leftJPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
@@ -130,7 +134,7 @@ public class MerchantJFrame extends javax.swing.JFrame {
                 liveScheBtnActionPerformed(evt);
             }
         });
-        leftJPanel.add(liveScheBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 330, 41));
+        leftJPanel.add(liveScheBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 300, 41));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/account_24px.png"))); // NOI18N
         leftJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
@@ -146,13 +150,17 @@ public class MerchantJFrame extends javax.swing.JFrame {
                 adInfoBtnActionPerformed(evt);
             }
         });
-        leftJPanel.add(adInfoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 330, 40));
+        leftJPanel.add(adInfoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 300, 40));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/annie-spratt-HB-Kf9WLy_0-unsplash.jpg"))); // NOI18N
         jLabel10.setPreferredSize(new java.awt.Dimension(3500, 2700));
         leftJPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2640, -260, 3000, 2730));
 
         jSplitPane1.setLeftComponent(leftJPanel);
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 1300));
+        jPanel1.setSize(new java.awt.Dimension(1200, 1300));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-NmwkK1iKPVc-unsplash.jpg"))); // NOI18N
 
@@ -186,7 +194,7 @@ public class MerchantJFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2470, Short.MAX_VALUE)
+                .addComponent(jSplitPane1)
                 .addContainerGap())
         );
 

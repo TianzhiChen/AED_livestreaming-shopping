@@ -71,11 +71,12 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         orderTable = new javax.swing.JTable();
         confirmButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(184, 167, 133));
-        setMaximumSize(new java.awt.Dimension(1000, 1000));
-        setMinimumSize(new java.awt.Dimension(1000, 1000));
-        setPreferredSize(new java.awt.Dimension(1000, 1000));
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,8 +94,8 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 400, 410));
 
-        confirmButton.setBackground(new java.awt.Color(235, 228, 209));
-        confirmButton.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        confirmButton.setBackground(new java.awt.Color(255, 204, 204));
+        confirmButton.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(51, 51, 51));
         confirmButton.setText("Received");
         confirmButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -103,7 +104,10 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
                 confirmButtonActionPerformed(evt);
             }
         });
-        add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 290, 50));
+        add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 170, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/annie-spratt-nWiS2rgtVts-unsplash.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-840, -840, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
@@ -144,6 +148,7 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable orderTable;
     // End of variables declaration//GEN-END:variables

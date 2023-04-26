@@ -47,57 +47,56 @@ public class SignInJPanel extends javax.swing.JPanel {
         signinBtn = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 217, 200));
-        setMaximumSize(new java.awt.Dimension(300, 1300));
-        setMinimumSize(new java.awt.Dimension(300, 1300));
-        setPreferredSize(new java.awt.Dimension(300, 1300));
-        setSize(new java.awt.Dimension(300, 1300));
-        setLayout(null);
+        setMaximumSize(new java.awt.Dimension(1500, 1100));
+        setMinimumSize(new java.awt.Dimension(1500, 1100));
+        setPreferredSize(new java.awt.Dimension(1500, 1100));
+        setSize(new java.awt.Dimension(1500, 1100));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Enter Password");
-        add(jLabel1);
-        jLabel1.setBounds(76, 211, 98, 33);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 211, 98, 33));
 
-        password.setBackground(new java.awt.Color(204, 204, 204));
+        password.setBackground(new java.awt.Color(242, 221, 221));
         password.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(password);
-        password.setBounds(192, 209, 202, 33);
+        add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 209, 202, 33));
 
-        jLabel2.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("User Name");
-        add(jLabel2);
-        jLabel2.setBounds(76, 158, 66, 33);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 158, 90, 33));
 
-        userName.setBackground(new java.awt.Color(204, 204, 204));
+        userName.setBackground(new java.awt.Color(242, 221, 221));
         userName.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(userName);
-        userName.setBounds(192, 156, 202, 33);
+        add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 156, 202, 33));
 
-        signinBtn.setBackground(new java.awt.Color(51, 51, 51));
-        signinBtn.setForeground(new java.awt.Color(204, 204, 204));
+        signinBtn.setBackground(new java.awt.Color(226, 112, 169));
+        signinBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        signinBtn.setForeground(new java.awt.Color(255, 255, 255));
         signinBtn.setText("SIGN IN");
         signinBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signinBtnActionPerformed(evt);
             }
         });
-        add(signinBtn);
-        signinBtn.setBounds(80, 440, 318, 35);
+        add(signinBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 318, 35));
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBox1.setBackground(new java.awt.Color(242, 221, 221));
+        jComboBox1.setEditable(true);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System_Manager", "Customer", "Ad_Admin", "Delivery_Admin", "Validation_Admin", "Merchant", "Live_Admin", "Delivery_Company" }));
-        add(jComboBox1);
-        jComboBox1.setBounds(192, 272, 202, 23);
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 272, 202, 30));
 
-        jLabel3.setFont(new java.awt.Font("InaiMathi", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Select Role");
-        add(jLabel3);
-        jLabel3.setBounds(76, 269, 98, 33);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 98, 33));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-pJ_DCj9KswI-unsplash.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-650, -620, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void signinBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinBtnActionPerformed
@@ -124,6 +123,7 @@ public class SignInJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField password;
     private javax.swing.JButton signinBtn;
     private javax.swing.JTextField userName;
