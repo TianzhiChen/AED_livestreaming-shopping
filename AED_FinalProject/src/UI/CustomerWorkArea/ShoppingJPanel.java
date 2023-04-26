@@ -372,11 +372,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Not Enough Stock!");
 
         }
-                
-                
-                
-                
-         
+            
         }else {
 
             JOptionPane.showMessageDialog(null, "Please select a row to register or the quantity is not a postive number!");

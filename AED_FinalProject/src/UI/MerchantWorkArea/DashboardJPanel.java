@@ -110,7 +110,7 @@ public class DashboardJPanel extends javax.swing.JPanel {
         dataset.setValue(250, "Amount", "june");
 
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("contribution", "monthly", "amount",
+        JFreeChart linechart = ChartFactory.createLineChart("Category", "monthly", "amount",
                 dataset, PlotOrientation.VERTICAL, false, true, false);
 
         //create plot object
@@ -143,7 +143,7 @@ public class DashboardJPanel extends javax.swing.JPanel {
         dataset.setValue(80, "Amount", "May");
         dataset.setValue(250, "Amount", "June");
 
-        JFreeChart chart = ChartFactory.createBarChart("contribution", "monthly", "amount",
+        JFreeChart chart = ChartFactory.createBarChart("Revenue", "monthly", "amount",
                 dataset, PlotOrientation.VERTICAL, false, true, false);
 
         CategoryPlot categoryPlot = chart.getCategoryPlot();
