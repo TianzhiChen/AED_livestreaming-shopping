@@ -63,7 +63,12 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         PriceField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         agentTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -137,6 +142,9 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
             }
         });
         add(PriceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 170, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-QY5U8JD3-tk-unsplash.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-540, -150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fieldAgentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldAgentNameActionPerformed
@@ -201,6 +209,7 @@ public class DeliveryCompanyJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fieldAgentName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables

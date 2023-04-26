@@ -113,6 +113,7 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(1200, 1300));
         setMinimumSize(new java.awt.Dimension(1200, 1300));
         setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         watchTable.setBackground(new java.awt.Color(252, 251, 250));
@@ -250,8 +251,8 @@ public class ShoppingJPanel extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 40, -1, -1));
         add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, 131, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/rikonavt-K3x_AkLVTAo-unsplash.jpg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -70, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-320, -680, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed

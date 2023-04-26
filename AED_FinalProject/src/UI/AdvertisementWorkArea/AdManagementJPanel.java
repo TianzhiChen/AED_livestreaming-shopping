@@ -57,7 +57,12 @@ public class AdManagementJPanel extends javax.swing.JPanel {
         adTable = new javax.swing.JTable();
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1200, 1300));
+        setMinimumSize(new java.awt.Dimension(1200, 1300));
+        setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Name");
@@ -123,6 +128,9 @@ public class AdManagementJPanel extends javax.swing.JPanel {
             }
         });
         add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-540, -940, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
@@ -201,6 +209,7 @@ public class AdManagementJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fieldName;
     private javax.swing.JTextField fieldPopularity;
     private javax.swing.JTextField fieldPrice;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

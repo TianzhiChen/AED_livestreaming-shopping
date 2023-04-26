@@ -63,6 +63,9 @@ public class DeliveryJFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
 
         jPanel1.setMaximumSize(new java.awt.Dimension(300, 1300));
         jPanel1.setMinimumSize(new java.awt.Dimension(300, 1300));

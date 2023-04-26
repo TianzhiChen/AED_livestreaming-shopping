@@ -62,6 +62,7 @@ public class EditJPanel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(1200, 1300));
         setMinimumSize(new java.awt.Dimension(1200, 1300));
         setPreferredSize(new java.awt.Dimension(1200, 1300));
+        setSize(new java.awt.Dimension(1200, 1300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N

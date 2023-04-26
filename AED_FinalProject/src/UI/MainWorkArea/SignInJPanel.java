@@ -47,7 +47,7 @@ public class SignInJPanel extends javax.swing.JPanel {
         signinBtn = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 217, 200));
         setMaximumSize(new java.awt.Dimension(1500, 1100));
@@ -95,8 +95,8 @@ public class SignInJPanel extends javax.swing.JPanel {
         jLabel3.setText("Select Role");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 98, 33));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-pJ_DCj9KswI-unsplash.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-650, -620, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/amy-shamblen-pJ_DCj9KswI-unsplash.jpg"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-540, -720, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void signinBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinBtnActionPerformed
@@ -123,7 +123,7 @@ public class SignInJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField password;
     private javax.swing.JButton signinBtn;
     private javax.swing.JTextField userName;

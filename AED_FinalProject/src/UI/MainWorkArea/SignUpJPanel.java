@@ -82,6 +82,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(231, 225, 211));
         setMaximumSize(new java.awt.Dimension(1500, 1100));
         setMinimumSize(new java.awt.Dimension(1500, 1100));
+        setPreferredSize(new java.awt.Dimension(1500, 1100));
         setSize(new java.awt.Dimension(1500, 1100));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

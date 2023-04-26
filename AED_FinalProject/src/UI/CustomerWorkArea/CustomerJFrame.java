@@ -50,7 +50,9 @@ public class CustomerJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 1200));
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -58,6 +60,7 @@ public class CustomerJFrame extends javax.swing.JFrame {
         LeftJPanel.setMaximumSize(new java.awt.Dimension(300, 1300));
         LeftJPanel.setMinimumSize(new java.awt.Dimension(300, 1300));
         LeftJPanel.setPreferredSize(new java.awt.Dimension(300, 1300));
+        LeftJPanel.setSize(new java.awt.Dimension(300, 1300));
         LeftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         shoppingButton.setFont(new java.awt.Font("Impact", 1, 13)); // NOI18N
@@ -106,6 +109,7 @@ public class CustomerJFrame extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1300));
         jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1300));
         jPanel2.setPreferredSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setSize(new java.awt.Dimension(1200, 1300));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
 

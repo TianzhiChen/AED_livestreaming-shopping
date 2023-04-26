@@ -43,11 +43,23 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         logoutBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         adManageBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1500, 1300));
+        setMinimumSize(new java.awt.Dimension(1500, 1300));
+        setPreferredSize(new java.awt.Dimension(1500, 1300));
+        setSize(new java.awt.Dimension(1500, 1300));
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setMinimumSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 1300));
+        jPanel1.setSize(new java.awt.Dimension(300, 1300));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutBtn.setText("LOGOUT");
@@ -56,29 +68,49 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 560, -1, -1));
+        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, 120, 40));
 
-        adManageBtn.setText("AD Manegement");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/categorize_24px.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel1.setText("AD Manegement");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 120, 20));
+
         adManageBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adManageBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(adManageBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        jPanel1.add(adManageBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -50, -1, -1));
 
         jSplitPane1.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 1300));
+        jPanel2.setSize(new java.awt.Dimension(1200, 1300));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pawel-czerwinski-2PN18U8CKi0-unsplash.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(jPanel2);
@@ -145,6 +177,10 @@ public class AdvertisementJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adManageBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
