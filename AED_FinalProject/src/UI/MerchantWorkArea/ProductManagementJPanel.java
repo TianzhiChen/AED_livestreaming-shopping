@@ -42,7 +42,7 @@ public class ProductManagementJPanel extends javax.swing.JPanel {
         this.business = business;
         this.userAccount = userAccount;
         this.productTableModel = (DefaultTableModel) productTable.getModel();
-//        populate();
+        populate();
     }
 
     /**

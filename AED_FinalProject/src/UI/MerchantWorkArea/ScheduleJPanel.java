@@ -403,8 +403,7 @@ public class ScheduleJPanel extends javax.swing.JPanel {
             }
             
         }
-        
-        
+  
 
     }
 
@@ -420,7 +419,9 @@ public class ScheduleJPanel extends javax.swing.JPanel {
         proBox.removeAllItems();
         Merchant m = this.business.getMerchantDirectory().findMerchantByName(this.userAccount.getUsername());
         for (Product p : m.getProductCatalog().getProductList()) {
-            proBox.addItem(p);
+            if (p.getStatus().equals(Product.Status.APPROVED)) {
+                proBox.addItem(p);
+            }
         }
     }
 

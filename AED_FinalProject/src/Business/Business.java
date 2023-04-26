@@ -61,41 +61,41 @@ public class Business {
         for(Customer co : customerDirectory.getCustomerDirectory()){
             System.out.println(co.getName()+"add");
         }
-        c.setPhoneNumber(Long.valueOf("1111111111"));
-        Product a = new Product();
-        a.setDescription("good");
-        a.setProductName("product1");
-        a.setProductPrice(22.3);
-         Product b = new Product();
-        b.setDescription("normal");
-        b.setProductName("product2");
-        b.setProductPrice(10.3);
-         Merchant mmm = new Merchant();
-         mmm.setMerchantName("merchant");
-         
-        this.merchantDirectory.getMerchantList().add(mmm);
-        Merchant m1 = this.merchantDirectory.createMerchant("111");
-        System.out.println(m1.getMerchantName());
-        System.out.println(m1.getName()+2);
-        mmm.getProductCatalog().getProductList().add(b);
-        mmm.getProductCatalog().getProductList().add(a);
-        Date date = new Date();
+//        c.setPhoneNumber(Long.valueOf("1111111111"));
+//        Product a = new Product();
+//        a.setDescription("good");
+//        a.setProductName("product1");
+//        a.setProductPrice(22.3);
+//         Product b = new Product();
+//        b.setDescription("normal");
+//        b.setProductName("product2");
+//        b.setProductPrice(10.3);
+//         Merchant mmm = new Merchant();
+//         mmm.setMerchantName("merchant");
+//         
+//        this.merchantDirectory.getMerchantList().add(mmm);
+//        Merchant m1 = this.merchantDirectory.createMerchant("111");
+//        System.out.println(m1.getMerchantName());
+//        System.out.println(m1.getName()+2);
+//        mmm.getProductCatalog().getProductList().add(b);
+//        mmm.getProductCatalog().getProductList().add(a);
+//        Date date = new Date();
         
-        ScheduleDirectory sss = new ScheduleDirectory();
-        mmm.setScheduleDirectory(sss);
-        ArrayList<Schedule> scheduleL = new ArrayList<>();
-        sss.setScheduleList(scheduleL);
-        Schedule schedule = new Schedule("first", date);
-        scheduleL.add(schedule);
-        System.out.println(schedule.getName()+3);
-        
- 
-        Map<String, ProductOffer> productMap = new HashMap<>();
-        schedule.setProductMap(productMap);
-        ProductOffer a1= new ProductOffer(a,10);
-        ProductOffer a2= new ProductOffer(b,10);
-        productMap.put("product1",a1 );
-        productMap.put("product2",a2 );
+//        ScheduleDirectory sss = new ScheduleDirectory();
+//        mmm.setScheduleDirectory(sss);
+//        ArrayList<Schedule> scheduleL = new ArrayList<>();
+//        sss.setScheduleList(scheduleL);
+//        Schedule schedule = new Schedule("first", date);
+//        scheduleL.add(schedule);
+//        System.out.println(schedule.getName()+3);
+//        
+// 
+//        Map<String, ProductOffer> productMap = new HashMap<>();
+//        schedule.setProductMap(productMap);
+//        ProductOffer a1= new ProductOffer(a,10);
+//        ProductOffer a2= new ProductOffer(b,10);
+//        productMap.put("product1",a1 );
+//        productMap.put("product2",a2 );
         
      
     }

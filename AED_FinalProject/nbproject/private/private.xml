@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/Business/ProductSchedule/Schedule.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MerchantWorkArea/AdManagementJPanel.java</file>
+            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/Business/Business.java</file>
+            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MerchantWorkArea/ScheduleJPanel.java</file>
             <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MainWorkArea/SignUpJPanel.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/Business/ProductCatalog/ProductCatalog.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MainWorkArea/MainJFrame.java</file>
             <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/SystemWorkArea/InfoJPanel.java</file>
             <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/SystemWorkArea/CreateJPanel.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MainWorkArea/SignInJPanel.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MerchantWorkArea/DashboardJPanel.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/InspectorWorkArea/InspectorJFrame.java</file>
-            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/CustomerWorkArea/ShoppingJPanel.java</file>
+            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/CustomerWorkArea/EditJPanel.java</file>
+            <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/Business/UserAccount/UserAccountDirectory.java</file>
             <file>file:/Users/tianzhichen/Desktop/a3/AED_FinalProject/src/UI/MerchantWorkArea/ProductManagementJPanel.java</file>
         </group>
     </open-files>
