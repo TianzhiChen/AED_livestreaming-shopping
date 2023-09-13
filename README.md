@@ -37,6 +37,10 @@ This platform merges the power of live broadcasting with e-commerce, creating an
 -	System admins can register user accounts
 -	System admins can assist users in changing their passwords and usernames
 
+### Advertisement Admin:
+-	Create different advertising packages for merchants to choose from, each with distinct pricing and varying levels of ad exposure.
+-	Track Ad performance and report
+
 ### Delivery admin
 -	Sign in
 -	Register/ Update and delete a delivery agent (username: Fedex, UPS, etc., fee)
